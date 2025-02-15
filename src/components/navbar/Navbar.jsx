@@ -3,23 +3,40 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const user = true;
   return (
     <nav>
       <div className="left">
-        <Link href="/" className="logo">
+        <a href="/" className="logo">
           <img src="/logoo.png" alt="logo" />
           <span>VijayEstate</span>
-        </Link>
-        <Link href="/">Home</Link>
-        <Link href="/">About</Link>
-        <Link href="/">Contact</Link>
-        <Link href="/">Agents</Link>
+        </a>
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+        <a href="/">Agents</a>
       </div>
       <div className="right">
-        <Link href="/">Sign In</Link>
-        <Link href="/" className="register">
-          Sign Up
-        </Link>
+        {user ? (
+          <div className="user">
+            <img
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt=""
+            />
+            <span>John Doe</span>
+            <Link to="/profile" className="profile">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <a href="/">Sign In</a>
+            <a href="/" className="register">
+              Sign Up
+            </a>
+          </>
+        )}
         <div className="menuIcon">
           <img
             src="/menu.png"
@@ -28,12 +45,12 @@ const Navbar = () => {
           />
         </div>
         <div className={openMenu ? "menu active" : "menu"}>
-          <Link href="/">Home</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
-          <Link href="/">Agents</Link>
-          <Link href="/">Sign In</Link>
-          <Link href="/">Sign Up</Link>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Agents</a>
+          <a href="/">Sign In</a>
+          <a href="/">Sign Up</a>
         </div>
       </div>
     </nav>
