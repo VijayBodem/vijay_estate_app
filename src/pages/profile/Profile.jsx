@@ -5,7 +5,7 @@ import Chat from "../../components/chat/Chat";
 
 const Profile = () => {
   return (
-    <div className="profile">
+    <div className="profilepage">
       <div className="details">
         <div className="wrapper">
           <div className="title">

@@ -1,6 +1,33 @@
-.profile {
+@import "../../responsive.scss";
+.profilepage {
   display: flex;
   height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+
+    /* Webkit Scrollbar (for Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+  }
 
   .details {
     flex: 3;
@@ -26,6 +53,11 @@
 
     &::-webkit-scrollbar-thumb:hover {
       background-color: #555;
+    }
+
+    @include md {
+      flex: none;
+      height: max-content;
     }
 
     .wrapper {
@@ -76,6 +108,11 @@
     flex: 2;
     background-color: #fcf5f3;
     height: 100%;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
 
     .wrapper {
       padding: 0px 20px;
